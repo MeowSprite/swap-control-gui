@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=System Control
+Name[zh_CN]=Swap管理
+Comment=Manage Swap
+Comment[zh_CN]=管理你的Swap分区
+Exec=swap-control
+Icon=applications-system
+Terminal=false
+Type=Application
+Categories=System;Settings;Qt;
