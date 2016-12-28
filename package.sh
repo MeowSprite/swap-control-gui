@@ -4,7 +4,7 @@ INFO(){ echo -n "INFO: "; echo "$@" ;}
 WARN(){ echo -n "WARN: "; echo "$@" ;}
 ERRO(){ echo -n "ERRO: "; echo -n "$@" ; echo " Abort!"; exit 1;}
 
-Depencence="libqt5core5a (>= 5.4.0), libqt5gui5 (>= 5.0.2), libqt5widgets5 (>= 5.2.0), libc6 (>= 2.14)"
+Depencence="libqt5core5a (>= 5.4.0), libqt5gui5 (>= 5.0.2), libqt5widgets5 (>= 5.2.0), libc6 (>= 2.14), systemd"
 
 cd "$(dirname $0)"
 VERSION=$(cat ./debian/version)
