@@ -4,7 +4,7 @@ INFO(){ echo -n "INFO: "; echo "$@" ;}
 WARN(){ echo -n "WARN: "; echo "$@" ;}
 ERRO(){ echo -n "ERRO: "; echo -n "$@" ; echo " Abort!"; exit 1;}
 
-Depencence="libqt5core5a (>= 5.4.0), libqt5gui5 (>= 5.0.2), libqt5widgets5 (>= 5.2.0), libc6 (>= 2.14), systemd"
+Depencence="libqt5core5a (>= 5.6.1), libqt5gui5 (>= 5.6.1), libqt5widgets5 (>= 5.6.1), libc6 (>= 2.14), systemd"
 
 cd "$(dirname $0)"
 VERSION=$(cat ./debian/version)
@@ -32,7 +32,7 @@ echo "Section: custom"          >> $DEB_NAME/DEBIAN/control
 echo "Priority: optional"       >> $DEB_NAME/DEBIAN/control
 echo "Architecture: amd64"        >> $DEB_NAME/DEBIAN/control
 echo "Essential: no"            >> $DEB_NAME/DEBIAN/control
-echo "Installed-Size: 16"       >> $DEB_NAME/DEBIAN/control
+echo "Installed-Size: 50"       >> $DEB_NAME/DEBIAN/control
 echo "Maintainer: Wikyo_Roc@163.com" >> $DEB_NAME/DEBIAN/control
 echo "Description: Combine with systemd-swap to manage zram, zswap and swap space" >> $DEB_NAME/DEBIAN/control
 echo "Depends: $Depencence" >> $DEB_NAME/DEBIAN/control
