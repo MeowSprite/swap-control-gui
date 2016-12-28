@@ -1,0 +1,18 @@
+[Unit]
+Description=Manage swap spaces on zram, files and partitions.
+After=local-fs.target
+
+[Service]
+RemainAfterExit=yes
+ExecStart=/usr/bin/systemd-swap start
+ExecStop=/usr/bin/systemd-swap  stop
+Nice=-19
+OOMScoreAdjust=-999
+CPUAccounting=true
+CPUQuota=5%
+MemoryHigh=16M
+MemoryMax=64M
+ProtectHome=true
+
+[Install]
+WantedBy=local-fs.target

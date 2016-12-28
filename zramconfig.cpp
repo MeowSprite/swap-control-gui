@@ -17,7 +17,7 @@ bool Config::saveToSystem()
     change["zram_streams"] = QString::number(stream);
     change["zram_alg"] = type_alg;
     qDebug() << "Zram Config Save" << change << endl;
-    Common::setConfigValue(Common::ConfigFilePath, change);
+    return Common::setConfigValue(Common::ConfigFilePath, change) == 0;
 }
 
 bool Config::reload()

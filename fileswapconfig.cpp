@@ -19,7 +19,7 @@ bool Config::saveToSystem()
     change["swapfc_max_count"] = QString::number(fcMaxCount);
     change["swapfc_free_swap_perc"] = QString::number(fcPercent);
     qDebug() << "FileSwap Config Save" << change << endl;
-    Common::setConfigValue(Common::ConfigFilePath, change);
+    return Common::setConfigValue(Common::ConfigFilePath, change) == 0;
 }
 
 bool Config::reload()
@@ -34,6 +34,7 @@ bool Config::reload()
     qDebug() << "loaded swapfile config" << fuEnabled
              << fuSize << fcEnabled << fcChunkSize
              << fcMaxCount << fcPercent << endl;
+    return true;
 }
 
 }

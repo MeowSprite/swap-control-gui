@@ -1,0 +1,2 @@
+#!/bin/sh
+ln -s /usr/share/swap-control/swap-control /usr/bin/swap-control

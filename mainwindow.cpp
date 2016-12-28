@@ -3,18 +3,20 @@
 #include <QProcess>
 #include <QStringList>
 #include <QMessageBox>
+#include <QCoreApplication>
 #include <common.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
-
+    Common::setPathAfterApplicationInit();
     serviceEnable = Common::isServiceEnable();
     //load global config
     auto config = Common::loadConfig(Common::ConfigFilePath);
     if(!config) {
         qDebug() << "error load config error" << endl;
+        QCoreApplication::quit();
         //todo: deal with load config error
     }
     //init config instances

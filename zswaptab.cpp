@@ -89,7 +89,7 @@ void MainWindow::on_compressor_type_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_zswap_save_clicked(bool checked)
 {
-    if(zswap->saveToSystem() == 0){
+    if(zswap->saveToSystem()){
         QMessageBox msg;
         msg.setWindowTitle("修改结果");
         msg.setText("保存成功");

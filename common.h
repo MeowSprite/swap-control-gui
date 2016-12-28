@@ -7,11 +7,16 @@
 #include <QIODevice>
 #include <QProcess>
 #include <QRegExp>
+#include <QCoreApplication>
 
 namespace Common {
-    static QString ConfigFilePath = "/home/meows/project/shell-tool/systemd-swap/swap_test.conf";
-    static QString ScriptPath = "/home/meows/project/qtproject/swap-control/shell/";
+    static QString ConfigFilePath = "/etc/systemd/swap.conf";
+    static QString ScriptPath = "";
     static QString ServiceName = "systemd-swap";
+
+    static void setPathAfterApplicationInit() {
+        ScriptPath = QCoreApplication::applicationDirPath() + "/shell/";
+    }
 
     static QString getContent(const QString& path){
         QFile f(path);
@@ -30,6 +35,7 @@ namespace Common {
             QString a = rx.capturedTexts().at(1);
             return a.toLong();
         }
+        return 0;
     }
 
     static bool isTrue(const QString& str){
@@ -56,6 +62,7 @@ namespace Common {
         cmdFile.close();    //we must close or flush file stream
         QProcess exec;
         QStringList arguments;
+        arguments << "--message" << "Swap Control:请求root权限，执行修改"+ConfigFilePath;
         arguments << "/bin/sh " + QFileInfo(cmdFile).absoluteFilePath();
         exec.start("gksudo", arguments);
         exec.waitForFinished();
@@ -65,6 +72,11 @@ namespace Common {
     }
 
     static QMap<QString, QString>* loadConfig(const QString& path) {
+        QFile configFile(path);
+        if(!configFile.exists()){
+            qDebug() << "config file not exists:" << path << endl;
+            return nullptr;
+        }
         static QMap<QString, QString> originConfig;
         QProcess exec;
         QStringList arguments;

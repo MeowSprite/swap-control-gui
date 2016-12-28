@@ -85,7 +85,7 @@ void MainWindow::on_FcPercentEdit_textEdited(const QString &arg1)
 
 void MainWindow::on_FileSwapSaveBtn_clicked()
 {
-    if(fileswap->saveToSystem() == 0){
+    if(fileswap->saveToSystem()){
         QMessageBox msg;
         msg.setWindowTitle("修改结果");
         msg.setText("保存成功");

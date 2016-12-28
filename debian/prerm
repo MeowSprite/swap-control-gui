@@ -1,0 +1,3 @@
+#!/bin/sh
+killall swap-control
+rm /usr/bin/swap-control

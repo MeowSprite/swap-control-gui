@@ -18,7 +18,7 @@ namespace Zswap {
         change["zswap_max_pool_percent"] = QString::number(max_pool_percent);
         change["zswap_zpool"] = type_zpool;
         qDebug() << "Zswap Config Save" << change << endl;
-        Common::setConfigValue(Common::ConfigFilePath, change);
+        return Common::setConfigValue(Common::ConfigFilePath, change) == 0;
     }
 
     bool Config::reload()

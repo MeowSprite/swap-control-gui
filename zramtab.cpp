@@ -74,7 +74,7 @@ void MainWindow::on_ZramAlgTypeCombox_currentIndexChanged(const QString &arg1)
 
 void MainWindow::on_ZramSaveBtn_clicked()
 {
-    if(zram->saveToSystem() == 0){
+    if(zram->saveToSystem()){
         QMessageBox msg;
         msg.setWindowTitle("修改结果");
         msg.setText("保存成功");
