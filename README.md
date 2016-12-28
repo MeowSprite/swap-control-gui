@@ -11,9 +11,13 @@ zram是另一种内存压缩技术，可以通过建立内存压缩区来充当�
 它是通过简单的检测内存free容量，来动态地生成和释放swap文件块
 
 #编译
-sudo apt-get install qt5-default
-qtchooser -run-tool=qmake -qt=qt5
-make
+
+    sudo apt-get install qt5-default
+    mkdir -p build/debug
+    mkdir -p build/release
+    qtchooser -run-tool=qmake -qt=qt5
+    make
 
 #debian 打包
-sh package.sh
+
+    sh package.sh
