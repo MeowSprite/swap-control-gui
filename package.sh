@@ -1,4 +1,4 @@
-#！/bin/bash
+#! /bin/bash
 
 INFO(){ echo -n "INFO: "; echo "$@" ;}
 WARN(){ echo -n "WARN: "; echo "$@" ;}
@@ -23,7 +23,10 @@ fi
 
 install debian/swap-control-gui.desktop -Dm644 $DEB_NAME/usr/share/applications/swap-control-gui.desktop
 install shell/listvalue.sh -Dm644 $DEB_NAME/usr/share/swap-control/shell/listvalue.sh
-install .//swap-control -Dm755 $DEB_NAME/usr/share/swap-control/swap-control
+install ./swap-control -Dm755 $DEB_NAME/usr/share/swap-control/swap-control
+
+mkdir -p $DEB_NAME/usr/share/swap-control/translations
+cp translations/*.qm $DEB_NAME/usr/share/swap-control/translations/
 
 
 echo "Package: systemd-swap-gui"    >  $DEB_NAME/DEBIAN/control

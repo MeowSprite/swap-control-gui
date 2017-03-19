@@ -43,5 +43,6 @@ HEADERS  += mainwindow.h \
     fileswapconfig.h
 
 FORMS    += mainwindow.ui
-
+TRANSLATIONS += translations/zh_CN.ts \
+    translations/en_US.ts
 

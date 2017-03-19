@@ -42,7 +42,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <property name="mouseTracking">
@@ -67,10 +67,10 @@
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>11</x>
-        <y>11</y>
+        <x>10</x>
+        <y>10</y>
         <width>351</width>
-        <height>141</height>
+        <height>149</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -80,7 +80,7 @@
           <string/>
          </property>
          <property name="text">
-          <string>开启zswap</string>
+          <string>开启ZSwap</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -173,9 +173,9 @@
      <widget class="QPushButton" name="ZramSaveBtn">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>290</x>
         <y>160</y>
-        <width>80</width>
+        <width>61</width>
         <height>26</height>
        </rect>
       </property>
@@ -183,13 +183,13 @@
        <string>保存</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>10</y>
-        <width>341</width>
-        <height>141</height>
+        <width>351</width>
+        <height>153</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -206,6 +206,9 @@
           <widget class="QLabel" name="label_10">
            <property name="text">
             <string>Zram大小</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -228,6 +231,9 @@
            <property name="text">
             <string>Zram Streams</string>
            </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
           </widget>
          </item>
          <item row="1" column="1">
@@ -237,6 +243,9 @@
           <widget class="QLabel" name="label_12">
            <property name="text">
             <string>Zram算法</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
           </widget>
          </item>
@@ -256,9 +265,9 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>20</y>
+        <y>10</y>
         <width>341</width>
-        <height>28</height>
+        <height>32</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -310,9 +319,9 @@
      <widget class="QPushButton" name="FileSwapSaveBtn">
       <property name="geometry">
        <rect>
-        <x>270</x>
+        <x>290</x>
         <y>160</y>
-        <width>80</width>
+        <width>61</width>
         <height>26</height>
        </rect>
       </property>
@@ -320,13 +329,13 @@
        <string>保存</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>60</y>
+        <y>50</y>
         <width>161</width>
-        <height>58</height>
+        <height>71</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_4">
@@ -349,13 +358,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
-        <x>21</x>
-        <y>61</y>
-        <width>171</width>
-        <height>130</height>
+        <x>20</x>
+        <y>50</y>
+        <width>173</width>
+        <height>141</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -470,9 +479,15 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>91</width>
+      <width>151</width>
       <height>26</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
     </property>
     <property name="text">
      <string>重启swap服务</string>
@@ -481,11 +496,14 @@
    <widget class="QCheckBox" name="ServiceEnable">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>230</x>
       <y>10</y>
-      <width>101</width>
+      <width>141</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
     </property>
     <property name="text">
      <string>开机启动服务</string>
