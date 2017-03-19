@@ -24,4 +24,5 @@ zram是另一种内存压缩技术，可以通过建立内存压缩区来充当�
 
 # 翻译
 使用linguist工具对translations文件夹下的ts文件进行翻译。
-在应用打包前执行release.sh生成qm二进制文件。
+在应用打包前执行release.sh生成qm二进制文件。  
+use the linguist tool to translate .ts files, and execute release.sh to generate .qm file.
