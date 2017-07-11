@@ -9,6 +9,12 @@ Depencence="libqt5core5a (>= 5.6.1), libqt5gui5 (>= 5.6.1), libqt5widgets5 (>= 5
 cd "$(dirname $0)"
 VERSION=$(cat ./debian/version)
 DEB_NAME=systemd-swap-gui${VERSION}
+rm -r $DEB_NAME
+ARCH="i386"
+if [ $(getconf WORD_BIT) = '32' ] && [ $(getconf LONG_BIT) = '64' ] ; then
+    ARCH="amd64"
+fi
+INFO "The architecture: $ARCH"
 mkdir -p $DEB_NAME
 ./systemd-swap/install.sh PREFIX=$(pwd)/$DEB_NAME/
 mkdir -p  $DEB_NAME/DEBIAN
