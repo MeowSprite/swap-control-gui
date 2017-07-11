@@ -12,7 +12,7 @@ zram是另一种内存压缩技术，可以通过建立内存压缩区来充当�
 
 # 编译
 
-    sudo apt-get install qt5-default
+    sudo apt-get install qt5-default qttools5-dev-tools
     mkdir -p build/debug
     mkdir -p build/release
     qtchooser -run-tool=qmake -qt=qt5
@@ -20,6 +20,7 @@ zram是另一种内存压缩技术，可以通过建立内存压缩区来充当�
 
 # debian 打包
 
+    sh translations/release.sh
     sh package.sh
 
 # 翻译
