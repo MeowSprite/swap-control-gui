@@ -39,7 +39,7 @@ echo "Package: systemd-swap-gui"    >  $DEB_NAME/DEBIAN/control
 echo "Version: $VERSION"        >> $DEB_NAME/DEBIAN/control
 echo "Section: custom"          >> $DEB_NAME/DEBIAN/control
 echo "Priority: optional"       >> $DEB_NAME/DEBIAN/control
-echo "Architecture: amd64"        >> $DEB_NAME/DEBIAN/control
+echo "Architecture: $ARCH"        >> $DEB_NAME/DEBIAN/control
 echo "Essential: no"            >> $DEB_NAME/DEBIAN/control
 echo "Installed-Size: 50"       >> $DEB_NAME/DEBIAN/control
 echo "Maintainer: Wikyo_Roc@163.com" >> $DEB_NAME/DEBIAN/control
